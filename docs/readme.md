@@ -6,6 +6,14 @@ Selector component of the TenForce design toolbox.
 
 This component is using a main and a plugin CSS files. The main contains the basic design, and the plugin contains some extra design in case of drag-n-drop functionality.
 
+## HTML structure
+
+The Design documentation was built in Jekyll using SASS and Liquid.
+
+- Structure for the unit with comments in Jekyll can be found [here](https://github.com/tenforce/design-toolbox-selector/blob/master/docs/_includes/components/toolbox-unit.html).
+- Structure for the selector with comments in Jekyll can be found [here](https://github.com/tenforce/design-toolbox-selector/blob/master/docs/_includes/components/toolbox-selector.html).
+
+
 ## Usage
 ### Links to CSS files
 - main CSS
