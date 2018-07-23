@@ -1,0 +1,27 @@
+{
+  "items": [{
+      "name": "Not started",
+      "icon": "ध",
+      "color": "#ff9b9b",
+      "selected": "true"
+    },
+    {
+      "name": "Ongoing",
+      "icon": "ध",
+      "color": "#00BFFF",
+      "selected": "false"
+    },
+    {
+      "name": "On hold",
+      "icon": "ध",
+      "color": "#F4CA16",
+      "selected": "false"
+    },
+    {
+      "name": "Finished",
+      "icon": "ध",
+      "color": "#0BDA51",
+      "selected": "false"
+    }
+  ]
+}

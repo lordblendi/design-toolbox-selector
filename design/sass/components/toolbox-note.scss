@@ -1,0 +1,27 @@
+---
+---
+
+.toolbox-note {
+  position: relative;
+  display: inline-block;
+  padding: 9px;
+  background-color: #F8FAFC;
+  border-radius: 3px;
+  border: 1px solid #FFF;
+
+  &--tooltip {
+  }
+
+  &--error {
+  }
+
+  p {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

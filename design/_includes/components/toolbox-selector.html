@@ -1,0 +1,90 @@
+{% comment %} splitting up the data into multiple items. separator ; {% endcomment %}
+{% assign data = include.toolboxSelectorData | split: ";" %}
+{% comment %} selected items, starting index is 1. separator , {% endcomment %}
+{% assign selectedIndexes = include.selectedIndexes | split: "," %}
+
+{% comment %} assign different classses depending on the flags {% endcomment %}
+{% comment %} expanded class {% endcomment %}
+{% assign expanded = "" %}
+{% if include.expanded %}
+  {% assign expanded = "toolbox-selector--expanded" %}
+{% endif %}
+{% comment %} singlselect class {% endcomment %}
+{% assign singleselect = "" %}
+{% if include.singleselect %}
+  {% assign singleselect = "toolbox-selector--singleselect" %}
+{% endif %}
+{% comment %} multiselect class {% endcomment %}
+{% assign multiselect = "" %}
+{% if include.multiselect %}
+  {% assign multiselect = "toolbox-selector--multiselect" %}
+{% endif %}
+{% comment %} required class {% endcomment %}
+{% assign required = "" %}
+{% if include.required %}
+  {% assign required = "toolbox-selector--required" %}
+{% endif %}
+{% comment %} readonly {% endcomment %}
+{% assign readonly = "JS_toolbox-selectorItem" %}
+{% assign readonlyClass = "" %}
+{% assign tabindex = "tabindex='0'" %}
+{% if include.readonly or expanded == "" %}
+  {% assign readonly = "" %}
+{% endif %}
+{% if include.readonly and expanded == "" %}
+  {% assign readonly = "" %}
+  {% assign expanded = "toolbox-selector--expanded" %}
+{% endif %}
+{% if include.readonly %}
+  {% assign tabindex = "" %}
+  {% assign readonlyClass = "toolbox-selector--readonly" %}
+{% endif %}
+{% comment %} has-popup class {% endcomment %}
+{% assign popupId = "" %}
+{% if include.popupId %}
+  {% assign popupId = "JS_has-popup" %}
+{% endif %}
+{% comment %} draggable class {% endcomment %}
+{% assign draggable = "" %}
+{% if include.draggable %}
+  {% assign draggable = "toolbox-selector--draggable" %}
+{% endif %}
+
+{% comment %} if it's a popup, add data-popid {% endcomment %}
+<div class="toolbox-selector JS_toolbox-selector {{expanded}} {{singleselect}} {{multiselect}} {{popupId}} {{required}} {{readonlyClass}} {{draggable}}" {% if include.popupId %}data-popid="{{include.popupId}}"{% endif %}>
+
+  {% comment %} if multiselect but not expanded {% endcomment %}
+  {% if multiselect != "" and expanded == "" %}
+    <div class="toolbox-selector__item {{readonly}} toolbox-selector__item--selected JS_toolbox-selectorItem--active" {{tabindex}} >
+      {% comment %} for loop through selectorItems {% endcomment %}
+      {% for item in data %}
+        {% include components/toolbox-unit.html item=item %}
+      {% endfor %}
+    </div>
+
+  {% else %}
+    {% comment %} for loop through selectorItems {% endcomment %}
+    {% for item in data %}
+        {% comment %} check if it's a selected item or not{% endcomment %}
+        {% assign selected = "" %}
+        {% comment %} capture the forloop index as a string{% endcomment %}
+        {% capture itemIndex %}{{forloop.index}}{% endcapture %}
+
+        {% for selectedIndex in selectedIndexes %}
+          {% comment %} if it's the same index, add the selected class {% endcomment %}
+          {% if selectedIndex == itemIndex %}
+            {% assign selected = "toolbox-selector__item--selected JS_toolbox-selectorItem--active" %}
+          {% endif %}
+        {% endfor %}
+
+        {% comment %} add itemSeparator if it's multiple items {% endcomment %}
+
+        {% if forloop.index > 1 %}
+          <div class="toolbox-selector__itemSeparator"></div>
+        {% endif %}
+        <div class="toolbox-selector__item {{readonly}} {{selected}}" {{tabindex}} >
+          {% include components/toolbox-unit.html item=item %}
+        </div>
+    {% endfor %}
+  {% endif %}
+</div>
