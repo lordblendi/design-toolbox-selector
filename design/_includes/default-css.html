@@ -1,0 +1,10 @@
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.5.3/tailwind.min.css" />
+
+{% assign cssLocation = "https://tenforce.github.io/design-toolbox-default-css" %}
+
+{% if site.url contains "localhost" %}
+  {% assign cssLocation = "http://localhost:4010" %}
+{% endif %}
+
+<link rel="stylesheet" href="{{ cssLocation }}/sass/default.css">

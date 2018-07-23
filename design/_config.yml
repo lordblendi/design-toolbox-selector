@@ -16,10 +16,7 @@
 # title: Your awesome title
 # baseurl: "" # the subpath of your site, e.g. /blog
 # baseurl: ""
-# url: "https://lordblendi.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
-port: 4010
+port: 4011
 # Build settings
 # sass:
 #   sass_dir: _sass
