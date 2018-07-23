@@ -1,0 +1,6 @@
+{% if site.url contains "localhost" %}
+  {% assign cssLocation = "http://localhost:4011" %}
+{% endif %}
+
+<link rel="stylesheet" href="{{ cssLocation }}/sass/toolbox-selector.css">
+<link rel="stylesheet" href="{{ cssLocation }}/sass/toolbox-selector-draggable.css">
