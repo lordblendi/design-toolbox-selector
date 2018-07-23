@@ -1,0 +1,27 @@
+---
+layout: home
+title: Drag
+permalink: /drag
+---
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $(function() {
+    $(".ui-widget-content").draggable({
+      helper: "clone",
+      revert: true
+    }).on("dragstart", function(event, ui) {
+      $(this).addClass("dragging-started");
+    }).on("dragstop", function(event, ui) {
+      $(this).removeClass("dragging-started");
+    });
+  });
+</script>
+
+
+<div class="ui-widget-content">
+  {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,4362,Bulk update speed regressed in 282" singleselect="true" expanded="true" draggable="true" readonly="true" selectedIndexes="1" %}
+</div>
+
+<div class="ui-widget-content">
+  {% include components/toolbox-selector.html toolboxSelectorData="#00BFFF,,7654,Add indicators in import/export" singleselect="true" expanded="true" draggable="true" readonly="true" selectedIndexes="1" %}
+</div>
