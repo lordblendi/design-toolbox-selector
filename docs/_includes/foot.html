@@ -1,3 +1,4 @@
+{% comment %} selector {% endcomment %}
 {% assign location = "https://tenforce.github.io/design-toolbox-field" %}
 
 {% if site.url contains "localhost" %}
@@ -8,6 +9,7 @@
 
 <script type="text/javascript" src="{{location}}/scripts/components/toolbox-field.js"></script>
 
+{% comment %} table {% endcomment %}
 {% assign location = "https://tenforce.github.io/design-toolbox-table" %}
 
 {% if site.url contains "localhost" %}
@@ -15,3 +17,31 @@
 {% endif %}
 
 <link rel="stylesheet" href="{{ location }}/sass/toolbox-table.css">
+
+
+
+{% comment %} modal {% endcomment %}
+{% assign location = "https://tenforce.github.io/design-toolbox-modal" %}
+
+{% if site.url contains "localhost" %}
+  {% assign location = "http://localhost:4015" %}
+{% endif %}
+
+<link rel="stylesheet" href="{{ location }}/sass/toolbox-modal.css">
+
+
+
+<script type="text/javascript" src="{{location}}/scripts/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="{{location}}/scripts/animation.js"></script>
+<script type="text/javascript" src="{{location}}/scripts/filter.js"></script>
+<script type="text/javascript" src="{{location}}/scripts/incl-excl-filter.js"></script>
+<script type="text/javascript" src="{{location}}/scripts/ms-calendar.js"></script>
+<script type="text/javascript" src="{{location}}/scripts/ms-colorselector.js"></script>
+<script type="text/javascript" src="{{location}}/scripts/ms-columnpicker-options.js"></script>
+<script type="text/javascript" src="{{location}}/scripts/popup.js"></script>
+<script type="text/javascript" src="{{location}}/scripts/reset-to-default.js"></script>
+<script type="text/javascript" src="{{location}}/scripts/reset.js"></script>
+<script type="text/javascript" src="{{location}}/scripts/sortable.js"></script>
+<script type="text/javascript" src="{{location}}/scripts/sublist-closer.js"></script>
+<script type="text/javascript" src="{{location}}/scripts/toolbox-modal.js"></script>
