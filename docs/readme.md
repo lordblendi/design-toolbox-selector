@@ -4,7 +4,7 @@ Selector component of the TenForce design toolbox.
 
 ## CSS
 
-This component is using a main and a plugin CSS files. The main contains the basic design, and the plugin contains some extra design in case of drag-n-drop functionality.
+This component is using a [main]https://github.com/tenforce/design-toolbox-selector/blob/master/docs/sass/toolbox-selector.scss and a [draggable plugin](https://github.com/tenforce/design-toolbox-selector/blob/master/docs/sass/toolbox-selector-draggable.scss) CSS file. The main contains the basic design, and the plugin contains some extra design in case of drag-n-drop functionality (currently we are using jQuery UI for that).
 
 ## HTML structure
 
@@ -19,12 +19,12 @@ The Design documentation was built in Jekyll using SASS and Liquid.
 - main CSS
   - [built](https://tenforce.github.io/design-toolbox-selector/sass/toolbox-selector.css)
   - [raw](https://github.com/tenforce/design-toolbox-selector/blob/master/docs/sass/toolbox-selector.scss)
-- plugin CSS
+- draggable plugin CSS
   - [built](https://tenforce.github.io/design-toolbox-selector/sass/toolbox-selector-draggable.css)
   - [raw](https://github.com/tenforce/design-toolbox-selector/blob/master/docs/sass/toolbox-selector-draggable.scss)
 
 ### Jekyll
-Add [this file](https://github.com/tenforce/design-toolbox-selector/tree/master/docs/import/include-selector.html) to the another Jekyll project to include files from this project.
+Add [the content of this file](https://github.com/tenforce/design-toolbox-selector/tree/master/docs/import/include-selector.html) to the another Jekyll project to include files from this project.
 
 ## Dependencies
 - [Tailwind v0.6.4](https://tailwindcss.com)
