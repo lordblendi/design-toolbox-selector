@@ -4,7 +4,7 @@ Selector component of the TenForce design toolbox.
 
 ## CSS
 
-This component is using a [main]https://github.com/tenforce/design-toolbox-selector/blob/master/docs/sass/toolbox-selector.scss and a [draggable plugin](https://github.com/tenforce/design-toolbox-selector/blob/master/docs/sass/toolbox-selector-draggable.scss) CSS file. The main contains the basic design, and the plugin contains some extra design in case of drag-n-drop functionality (currently we are using jQuery UI for that).
+This component is using a [main](https://github.com/tenforce/design-toolbox-selector/blob/master/docs/sass/toolbox-selector.scss) and a [draggable plugin](https://github.com/tenforce/design-toolbox-selector/blob/master/docs/sass/toolbox-selector-draggable.scss) CSS file. The main contains the basic design, and the plugin contains some extra design in case of drag-n-drop functionality (currently we are using jQuery UI for that).
 
 ## HTML structure
 
