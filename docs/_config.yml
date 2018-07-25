@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 # title: Your awesome title
 # baseurl: "" # the subpath of your site, e.g. /blog
-baseurl: "/"
+baseurl: ""
 port: 4011
 # Build settings
 # sass:
