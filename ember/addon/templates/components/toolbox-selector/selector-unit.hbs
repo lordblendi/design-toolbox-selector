@@ -1,0 +1,17 @@
+{{#if (or escapedStyle prefix)}}
+  <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix" style={{if escapedStyle escapedStyle}}>{{{prefix}}}</div>
+{{/if}}
+
+{{#if label}}
+  <div class="toolbox-selector__blockPart toolbox-selector__blockPart--label">
+    {{{label}}}
+  </div>
+{{/if}}
+
+{{#if field}}
+  {{#if label}}
+    <div class="toolbox-selector__blockSeparator"></div>
+  {{/if}}
+
+  <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">{{{field}}}</div>
+{{/if}}

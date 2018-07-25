@@ -1,0 +1,7 @@
+{{yield
+  (hash
+    item=(component "toolbox-selector/selector-item" required=(and multiSelect oneSelected) willSelect=(action "selectItem") willUnselect=(action "unselectItem") register=(action "registerItem") unregister=(action "unregisterItem")  )
+    unit=(component "toolbox-selector/selector-unit")
+    separator=(component "toolbox-selector/selector-separator")
+  )
+}}

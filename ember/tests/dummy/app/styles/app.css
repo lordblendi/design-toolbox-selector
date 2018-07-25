@@ -1,0 +1,17 @@
+
+.toolbox-tabs-nav ul{
+    overflow-x: hidden;
+}
+
+.toolbox-tabs-nav__slideShadow {
+    pointer-events: inherit;
+}
+
+.white {
+    background-color: white;
+}
+
+/* This is to force the trigger element to resize to its children size */
+.toolbox-modal__trigger {
+    display: inline-block;
+}

@@ -1,0 +1,87 @@
+{{#options-toolbar as |toolbar|}}
+  {{#toolbar.option label="Theme"}}
+    {{#toolbox-selector singleSelect=true required=true as |selector|}}
+      {{#selector.item isSelected=isLightThemeSelected select=(action "pickTheme" "#FFFFFF")}}
+        {{selector.unit field="Light"}}
+      {{/selector.item}}
+
+      {{selector.separator}}
+
+      {{#selector.item isSelected=(not isLightThemeSelected) select=(action "pickTheme" "#000000")}}
+        {{selector.unit field="Dark"}}
+      {{/selector.item}}
+
+    {{/toolbox-selector}}
+  {{/toolbar.option}}
+
+  {{#toolbar.option label="Loading"}}
+    {{#toolbox-selector singleSelect=false as |selector|}}
+      {{#selector.item isSelected=loadingSelectors select=(action "setLoading" "loadingSelectors" true) unselect=(action "setLoading" "loadingSelectors" false)}}
+        {{selector.unit field="Selectors"}}
+      {{/selector.item}}
+    {{/toolbox-selector}}
+  {{/toolbar.option}}
+{{/options-toolbar}}
+
+{{#each sections as |section|}}
+  <div class="flex flex-col sm:flex-row m-8 pb-4 border-b-2 border-dashed border-grey-dark overflow-hidden" style={{style}}>
+    {{#each section.subSections as |subSection|}}
+      <div class="sm:w-1/{{section.subSections.length}} p-2 overflow-hidden">
+        <h2 class="mb-8">{{subSection.label}}</h2>
+
+        {{#each subSection.examples as |example index|}}
+
+          <div class="toolbox-field toolbox-field--not-empty">
+            <div class="toolbox-field__label">{{example.label}}</div>
+            <div class="toolbox-field__data">
+              <div class="toolbox-field__value">
+                {{#if (eq example.type "selector")}}
+                  {{#toolbox-selector
+                  expanded=example.expanded
+                  singleSelect=example.singleSelect
+                  required=example.required
+                  readOnly=example.readOnly
+                  loading=loadingSelectors
+                  as |selector|}}
+
+                    {{#each example.possible as |item|}}
+
+                      {{#if (not-eq example.possible.firstObject item)}}
+                        {{selector.separator}}
+                      {{/if}}
+
+                      {{#selector.item isSelected=item.selected select=(action "selectItem" item) unselect=(action "unselectItem" item)}}
+                        {{selector.unit color=item.prefix.color prefix=item.prefix.content label=item.label field=item.field}}
+                      {{/selector.item}}
+
+                    {{/each}}
+                  {{/toolbox-selector}}
+                {{/if}}
+
+                {{#if (eq example.type "checkbox")}}
+                  {{toolbox-checkbox
+                  isChecked=example.checked
+                  isUnchecked=example.unchecked
+                  checkColor=example.truePrefixColor
+                  uncheckColor=example.falsePrefixColor
+                  expanded=example.expanded
+                  singleSelect=example.singleSelect
+                  required=example.required
+                  readOnly=example.readOnly
+                  loading=loadingSelectors
+                  check=(action "checkItem" example)
+                  uncheck=(action "uncheckItem" example)
+                  removeCheck=(action "removeCheckItem" example)
+                  removeUncheck=(action "removeUncheckItem" example)
+                  }}
+                {{/if}}
+              </div>
+            </div>
+          </div>
+        {{else}}
+          Not implemented yet.
+        {{/each}}
+      </div>
+    {{/each}}
+  </div>
+{{/each}}

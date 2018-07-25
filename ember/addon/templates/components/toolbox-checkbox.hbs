@@ -1,0 +1,12 @@
+{{#toolbox-selector expanded=expanded readOnly=readOnly singleSelect=singleSelect multiSelect=multiSelect required=required loading=loading as |selector|}}
+  {{#selector.item isSelected=isChecked select=(action "handleCheck") unselect=(action "handleRemoveCheck")}}
+    {{selector.unit color=checkColor prefix=checkPrefix label=checkLabel field=checkField}}
+  {{/selector.item}}
+
+  {{selector.separator}}
+
+  {{#selector.item isSelected=isUnchecked select=(action "handleUncheck") unselect=(action "handleRemoveUncheck")}}
+    {{selector.unit color=uncheckColor prefix=uncheckPrefix label=uncheckLabel field=uncheckField}}
+  {{/selector.item}}
+
+{{/toolbox-selector}}
