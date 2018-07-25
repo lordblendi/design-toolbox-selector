@@ -26,3 +26,30 @@ node_modules
 dist
 yarn.lock
 
+
+#EMBER
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+ember/dist
+ember/tmp
+
+# dependencies
+ember/node_modules
+ember/bower_components
+
+# misc
+ember/.sass-cache
+ember/connect.lock
+ember/coverage/*
+ember/libpeerconnection.log
+ember/npm-debug.log*
+ember/yarn-error.log
+ember/testem.log
+
+# ember-try
+ember/.node_modules.ember-try/
+ember/bower.json.ember-try
+ember/package.json.ember-try
+ember/.idea
+
